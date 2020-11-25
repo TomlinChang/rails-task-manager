@@ -1,0 +1,29 @@
+<div class="container">
+  <h1><%= @task.title %></h1>
+  <div class="card bg-light" style="width: 25rem;">
+      <p ><%= @task.details %></p>
+  </div>
+
+  <form action="">
+    <input type="checkbox">
+    <label for="">Mark as completed</label>
+  </form>
+</div>
+
+<div class="container">
+    <%= link_to 'Back to list', tasks_path  %>
+</div>
+
+<div class="container">
+    <%= link_to 'Edit list', edit_task_path  %>
+</div>
+
+<div class="container">
+  <div class="thumbnail">
+  <%= link_to image_tag('https://www.flaticon.com/svg/static/icons/svg/1214/1214926.svg'),
+              task_path(@task),
+              method: :delete,
+              data: { confirm: "Are you sure?" } %>
+  </div>
+</div>
+
